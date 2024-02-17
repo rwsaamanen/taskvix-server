@@ -6,11 +6,9 @@ on:
 
 jobs:
   build-taskvix-api:
-    name: Build taskvix.api
+    name: Build taskvix-api
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -27,4 +25,5 @@ jobs:
         run:
           ./mvnw clean package jib:dockerBuild -DskipTests
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/taskvix-api
+          docker push ${{ secrets.DOCKER_USERNAME }}/taskvix-api &&
+          docker logout
