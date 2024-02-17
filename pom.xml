@@ -93,7 +93,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>taskvix/taskvix-api</name>
+						<name>rwsaamanen/taskvix-api</name>
 					</image>
 					<excludes>
 						<exclude>
@@ -110,7 +110,7 @@
 					<version>3.3.1</version>
 					<configuration>
 						<to>
-							<image>taskvix/taskvix-api</image>
+							<image>rwsaamanen/taskvix-api</image>
 						</to>
 				</configuration>
 			</plugin>
